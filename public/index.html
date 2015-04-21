@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		html {
+			font-size: 10px;
+		}
+		.wrapper {
+			max-width: 1280px;
+			width: 100%;
+			margin: 0 auto;
+		}
+		form {
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<form action="/" method="POST">
+			<input type="text" name="artist" placeholder="Artist">
+			<input type="text" name="workTitle" placeholder="Work Title">
+			<input type="text" name="year" placeholder="Year">
+			<input type="text" name="origin" placeholder="Origin">
+			<input type="file" name="image" accept="image/*" placeholder="Choose File">
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+</body>
+</html>
