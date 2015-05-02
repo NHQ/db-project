@@ -1,23 +1,20 @@
-var http = require('http')
-var ecstatic = require('ecstatic')
-var path = require('path')
-var fs = require('fs')
+var http 		= require('http')
+var ecstatic 	= require('ecstatic')
+var path 		= require('path')
+var fs 			= require('fs')
 
-var level = require('level')
-var db = level('./db')
-var formidable = require('formidable')
-var utils = require('util')
-var server = http.createServer(handler)
+var level 		= require('level')
+var db 			= level('./db')
+var formidable 	= require('formidable')
+var utils 		= require('util')
+var server 		= http.createServer(handler)
+
+var static		= ecstatic({root: __dirname + '/public'})
+
+// server handler function
 function handler (req, res) {
-
-	if(req.method === 'GET') {
-		var stream = fs.createReadStream(__dirname + '/public/index.html', 'utf8')
-
-		console.log(req.url)
-		res.writeHead(200, {'content-type': 'text/html'})
-		stream.pipe(res)
-	}
-	else if(req.method === 'POST') {
+	
+	if(req.method === 'POST') {
 		var form = new formidable.IncomingForm()
 
 		form.uploadDir = __dirname + '/tmp'
@@ -54,6 +51,9 @@ function handler (req, res) {
 				res.end()
 			})
 		})
+	}
+	else {
+		static(req, res)
 	}
 }
 
