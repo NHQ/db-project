@@ -5,11 +5,14 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "bundle": "browserify entry.js -o public/scripts/bundle.js -t brfs -d",
+    "watch": "watchify entry.js -o public/scripts/bundle.js -t brfs -d"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "brfs": "^1.4.0",
     "ecstatic": "^0.7.4",
     "formidable": "^1.0.17",
     "level": "^0.18.0"
