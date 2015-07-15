@@ -1,29 +1,38 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/Users/noah/.nvm/v0.10.36/bin/node',
-1 verbose cli   '/Users/noah/.nvm/v0.10.36/bin/npm',
+1 verbose cli [ '/Users/noah/.nvm/versions/node/v0.12.7/bin/node',
+1 verbose cli   '/Users/noah/.nvm/versions/node/v0.12.7/bin/npm',
 1 verbose cli   'run',
-1 verbose cli   'test' ]
-2 info using npm@1.4.28
-3 info using node@v0.10.36
-4 verbose run-script [ 'pretest', 'test', 'posttest' ]
-5 info pretest db-project@1.0.0
-6 info test db-project@1.0.0
-7 verbose unsafe-perm in lifecycle true
-8 info db-project@1.0.0 Failed to exec test script
-9 error db-project@1.0.0 test: `echo "Error: no test specified" && exit 1`
-9 error Exit status 1
-10 error Failed at the db-project@1.0.0 test script.
-10 error This is most likely a problem with the db-project package,
-10 error not with npm itself.
-10 error Tell the author that this fails on your system:
-10 error     echo "Error: no test specified" && exit 1
-10 error You can get their info via:
-10 error     npm owner ls db-project
-10 error There is likely additional logging output above.
-11 error System Darwin 14.3.0
-12 error command "/Users/noah/.nvm/v0.10.36/bin/node" "/Users/noah/.nvm/v0.10.36/bin/npm" "run" "test"
-13 error cwd /Users/noah/Projects/personal/db-project
-14 error node -v v0.10.36
-15 error npm -v 1.4.28
+1 verbose cli   'prefix' ]
+2 info using npm@2.11.3
+3 info using node@v0.12.7
+4 verbose run-script [ 'prefix' ]
+5 info prefix db-project@1.0.0
+6 verbose unsafe-perm in lifecycle true
+7 info db-project@1.0.0 Failed to exec prefix script
+8 verbose stack Error: db-project@1.0.0 prefix: `postcss --use autoprefixer -o public/style/main.css.map public/style/mian.css`
+8 verbose stack spawn ENOENT
+8 verbose stack     at ChildProcess.<anonymous> (/Users/noah/.nvm/versions/node/v0.12.7/lib/node_modules/npm/lib/utils/spawn.js:17:16)
+8 verbose stack     at ChildProcess.emit (events.js:110:17)
+8 verbose stack     at maybeClose (child_process.js:1015:16)
+8 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:1087:5)
+9 verbose pkgid db-project@1.0.0
+10 verbose cwd /Users/noah/Projects/personal/db-project
+11 error Darwin 14.3.0
+12 error argv "/Users/noah/.nvm/versions/node/v0.12.7/bin/node" "/Users/noah/.nvm/versions/node/v0.12.7/bin/npm" "run" "prefix"
+13 error node v0.12.7
+14 error npm  v2.11.3
+15 error file sh
 16 error code ELIFECYCLE
-17 verbose exit [ 1, true ]
+17 error errno ENOENT
+18 error syscall spawn
+19 error db-project@1.0.0 prefix: `postcss --use autoprefixer -o public/style/main.css.map public/style/mian.css`
+19 error spawn ENOENT
+20 error Failed at the db-project@1.0.0 prefix script 'postcss --use autoprefixer -o public/style/main.css.map public/style/mian.css'.
+20 error This is most likely a problem with the db-project package,
+20 error not with npm itself.
+20 error Tell the author that this fails on your system:
+20 error     postcss --use autoprefixer -o public/style/main.css.map public/style/mian.css
+20 error You can get their info via:
+20 error     npm owner ls db-project
+20 error There is likely additional logging output above.
+21 verbose exit [ 1, true ]

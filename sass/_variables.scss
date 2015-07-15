@@ -1,0 +1,101 @@
+// colors
+$site-color: #000000;
+$site-highlight: #f7155b;
+$site-stroke: #dbdbdb;
+$site-gray: #cbcbcb;
+$site-light-gray: #f8f8f9;
+$site-dark-gray:#646b6b;
+$site-strong: #1b1c21;
+$site-light: #AAAAAA;
+$site-medium: #5c5c5c;
+$site-error: #f07479;
+$site-hover: #989c9f;
+$site-background: #ffffff;
+$site-background-alt: #f9f9f9;
+
+// sidebar
+$sidebar-color: darken(#cfcfc7, 20%);
+$nav-color: lighten($sidebar-color, 10%);
+
+//font families
+$base-font: 'latoregular';
+$itallic: 'latoitalic';
+$bold: 'latosemibold';
+$bold-italic: 'latosemibold_italic';
+$light: 'latolight';
+$light-italic: 'latolight_italic';
+$exta-light: 'latohairline';
+$extalight-itallic: 'latohairline_italic';
+
+
+// page layout
+$header-height: 77px;
+$footer-height: 230px;
+$border-radius: 5px;
+
+// typography math
+$baseline: 10px;
+$baseline-rem: 1.5rem;
+$baseline-lineheight: 2rem;
+$line-height-factor: 1.7;
+$letter-spacing-factor: 0.0009;
+
+// global spacing
+$spacing: 10px;
+$spacing-double: $spacing * 2;
+$spacing-triple: $spacing * 3;
+$spacing-quad:   $spacing * 4;
+$spacing-quint:  $spacing * 5;
+$spacing-sext:   $spacing * 6;
+$spacing-sept:   $spacing * 7;
+$spacing-oct: 	 $spacing * 8;
+$spacing-half:   $spacing / 2;
+$spacing-third:  $spacing / 3;
+$spacing-fourth: $spacing / 4;
+
+// responsive
+	// global breaks
+	$tiny: 320;
+  $small: 480;
+	$phone-s: 360;
+	$phone: 640;
+	$phone-l: 768;
+	$tablet: 960;
+	$tablet-l: 1024;
+	$full: 1080; 
+	$full-l: 1120; 
+	$desktop: 1280;
+
+// respond-to
+@mixin respond-to($breakpoint) {
+  @media only screen and (max-width: $breakpoint + px) { @content; }
+}
+
+// build media queries
+@mixin tiny() {
+  @include respond-to($tiny) { @content; }
+}
+@mixin small() {
+  @include respond-to($small) { @content; }
+}
+@mixin phone-s() {
+  @include respond-to($phone-s) { @content; }
+}
+@mixin phone() {
+  @include respond-to($phone) { @content; }
+}
+@mixin phone-l() {
+  @include respond-to($phone-l) { @content; }
+}
+@mixin tablet() {
+  @include respond-to($tablet) { @content; }
+}
+@mixin tablet-l() {
+  @include respond-to($tablet-l) { @content; }
+}
+@mixin full() {
+  @include respond-to($full) { @content; }
+}
+@mixin desktop() {
+  @include respond-to($desktop) { @content; }
+}
