@@ -6,21 +6,24 @@
   "scripts": {
     "build:css": "node-sass --source-map='public/style/main.css.map' --output-style=expanded sass/main.scss public/style/main.css",
     "watch:css": "nodemon -e scss -x \"npm run build:css\"",
-    "prefix": "postcss --use autoprefixer -o public/style/main.css.map public/style/mian.css",
+    "prefix": "postcss --use autoprefixer -o public/style/main.css public/style/main.css",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "bundle": "browserify entry.js -o public/scripts/bundle.js -t brfs -d",
     "watch:js": "watchify entry.js -o public/scripts/bundle.js -t brfs -d",
     "watch": "npm run watch:js & npm run watch:css",
+    "build": "npm run prefix",
     "dev": "parallelshell 'npm run start' 'npm run watch'"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "autoprefixer": "^5.2.0",
     "brfs": "^1.4.0",
     "ecstatic": "^0.7.4",
     "formidable": "^1.0.17",
     "level": "^0.18.0",
-    "autoprefixer": "^5.2.0"
+    "postcss": "^4.1.16",
+    "postcss-cli": "^1.4.0"
   }
 }
