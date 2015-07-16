@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build:css": "node-sass --source-map='public/style/main.css.map' --output-style=expanded sass/main.scss public/style/main.css",
+    "build:css": "node-sass sass/ -o public/style",
     "watch:css": "nodemon -e scss -x \"npm run build:css\"",
     "prefix": "postcss --use autoprefixer -o public/style/main.css public/style/main.css",
     "test": "echo \"Error: no test specified\" && exit 1",
