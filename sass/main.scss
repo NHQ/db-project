@@ -1,3 +1,19 @@
+// INCLUDES
 @import "variables";
+@import "reset";
+@import "font";
+
+// MIXINS
+@import "clearfix";
+@import "respond-to";
+@import "type-size";
+
+// BASE STYLES
 @import "base";
-@import "flex"
+@import "wrapper";
+@import "flex";
+@import "list";
+@import "heading";
+
+// MODULES
+@import "modules/image-hero";

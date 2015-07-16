@@ -15,18 +15,18 @@
 
 // one column stack
 .flex-col {
-  display: flex;
   flex-flow: column nowrap; 
 }
 
 //space between
 .flex-gutter {
-    padding: 0 1rem 0 1rem;
+  padding: 0 1rem 0 1rem;
+  &-large { padding: 0 2rem 0 2rem;}
 }
 
 //flex align example: http://flexboxin5.com/
 .flex-wrap {
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .flex-nowrap {
