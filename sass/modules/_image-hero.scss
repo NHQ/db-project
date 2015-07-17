@@ -1,4 +1,19 @@
 .image-hero {
   padding: 2rem 0 3rem;
+
   img { display: block; width: 100%; margin: 0 auto;}
+
+  .image-heading { @include type-size(3) }
+  .image-artist { 
+    padding-top: 3rem;
+    font-family: $light; 
+    @include type-size(2.5)
+  }
+  .image-date { font-family: $light-italic; @include type-size(2) }
+  .image-list {
+    &.list { 
+      padding-top: 1rem;
+      .list-item { margin-bottom: 0; }
+    }
+  }
 }

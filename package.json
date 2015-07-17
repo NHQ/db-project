@@ -13,7 +13,7 @@
     "watch:js": "watchify entry.js -o public/scripts/bundle.js -t brfs -d",
     "watch": "npm run watch:js & npm run watch:css",
     "build": "npm run prefix",
-    "dev": "parallelshell 'npm run start' 'npm run watch'"
+    "develop": "parallelshell 'npm run start' 'npm run watch'"
   },
   "author": "",
   "license": "ISC",

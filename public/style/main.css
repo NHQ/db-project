@@ -648,9 +648,45 @@ body {
   .list-heading.flex-item {
     margin: 0; }
 
+.hero {
+  padding: 5rem 0; }
+  .hero .flex-item {
+    margin: 0; }
+  .hero .heading {
+    font-family: "latolight";
+    font-size: 5rem;
+    line-height: 8.5rem;
+    letter-spacing: 0.0045rem; }
+  .hero .hero-info {
+    text-align: right;
+    color: gray;
+    font-family: "latolight";
+    font-size: 3rem;
+    line-height: 5.1rem;
+    letter-spacing: 0.0027rem; }
+
 .image-hero {
   padding: 2rem 0 3rem; }
   .image-hero img {
     display: block;
     width: 100%;
     margin: 0 auto; }
+  .image-hero .image-heading {
+    font-size: 3rem;
+    line-height: 5.1rem;
+    letter-spacing: 0.0027rem; }
+  .image-hero .image-artist {
+    padding-top: 3rem;
+    font-family: "latolight";
+    font-size: 2.5rem;
+    line-height: 4.25rem;
+    letter-spacing: 0.00225rem; }
+  .image-hero .image-date {
+    font-family: "latolight_italic";
+    font-size: 2rem;
+    line-height: 3.4rem;
+    letter-spacing: 0.0018rem; }
+  .image-hero .image-list.list, .image-hero .image-list.list-inline {
+    padding-top: 1rem; }
+    .image-hero .image-list.list .list-item, .image-hero .image-list.list-inline .list-item {
+      margin-bottom: 0; }
