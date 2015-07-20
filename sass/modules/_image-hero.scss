@@ -3,17 +3,16 @@
 
   img { display: block; width: 100%; margin: 0 auto;}
 
-  .image-heading { @include type-size(3) }
-  .image-artist { 
+  .heading { @include type-size(3) }
+  .heading-sub { 
     padding-top: 3rem;
     font-family: $light; 
     @include type-size(2.5)
   }
-  .image-date { font-family: $light-italic; @include type-size(2) }
-  .image-list {
-    &.list { 
-      padding-top: 1rem;
-      .list-item { margin-bottom: 0; }
-    }
+  .heading-em { font-family: $light-italic; @include type-size(2) }
+  .heading-sub-lrg {
+    color: lighten($site-color, 60%);
+    font-family: $light;
+    @include type-size(2.2);
   }
 }

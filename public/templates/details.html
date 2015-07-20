@@ -5,13 +5,13 @@
     <title>Details Page</title>
     <link rel="stylesheet" href="../style/main.css">
   </head>
-  <body>
+  <body data-iventory="NM12_127">
     <section class="hero">
       <div class="wrapper">
         <div class="flex flex-center">
           <div class="flex-item flex-item-50"><h1 class="heading">McEvoy Collection</h1></div>
           <div class="flex-item flex-item-50">
-            <p class="hero-info">Inventory No.  NM12.127</p>
+            <p class="trigger hero-info">Inventory No.  NM12.127</p>
           </div>
         </div>
       </div>
@@ -22,69 +22,87 @@
       <div class="wrapper">
         <div class="flex">
           <div class="flex-item flex-item-50">
-            <h2 class="image-heading">James Brown Backstage at the Apollo Theater, N.Y.C.</h2>
-            <h3 class="image-artist">Diane Arbus, <span class="image-date">1966 (printed later)</span></h3>
-            <ul class="list image-list">
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Edition</span>21/75</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Dimensions</span>20 x 16 inches</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Frame Support</span>25x24x2inches</li>
+            <h2 id="work-title" class="heading">James Brown Backstage at the Apollo Theater, N.Y.C., <span class="heading-em">1966 (printed later)</span></h2>
+            <h3 class="heading-sub">Diane Arbus <span class="heading-em">(March 14, 1923 – July 26, 1971)</span></h3>
+            <h4 class="heading-sub-lrg">American</h4>
+            <ul class="list details-list">
+              <li class="list-item flex">
+                <span class="list-heading flex-item flex-item-25">Edition</span>
+                <span class="flex-item flex-item-75">21/75</span>
+              </li>
+              <li class="list-item flex">
+                <span class="list-heading flex-item flex-item-25">Dimensions</span>
+                <span class="flex-item flex-item-75">20 x 16 inches</span>
+              </li>
+              <li class="list-item flex">
+                <span class="list-heading flex-item flex-item-25">Frame Support</span>
+                <span class="flex-item flex-item-75">25 x 24 x 2 inches</span>
+              </li>
+            </ul>
+
+            <ul class="list details-list">
+              <li class="list-item flex">
+                <span class="list-heading flex-item flex-item-25">Medium</span>
+                <span class="flex-item flex-item-75">Gelatin silver print</span>
+              </li>
+              <li class="list-item flex">
+                <span class="list-heading flex-item flex-item-25">MediaType</span>
+                <span class="flex-item flex-item-75">B/WPhotograph</span>
+              </li>
+              <li class="list-item flex">
+                <span class="list-heading flex-item flex-item-25">Signature</span>
+                <span class="flex-item flex-item-75">Stamped “A Diane Arbus photograph,” signed, titled, dated, numbered</span>
+              </li>
+            </ul>
+
+            <ul class="list details-list">
+              <li class="list-item flex">
+                <span class="list-heading flex-item flex-item-25">Provenance</span>
+                <span class="flex-item flex-item-75">Robert Miller Gallery, NY</span>
+              </li>
+              <li class="list-item flex">
+                <span class="list-heading flex-item flex-item-25">Exhibitions</span>
+                <span class="flex-item flex-item-75"></span>
+              </li>
+              <li class="list-item flex">
+                <span class="list-heading flex-item flex-item-25">References</span>
+                <span class="flex-item flex-item-75">Illus: Magazine Work, p. 74; Revelations, p. 178</span>
+              </li>
             </ul>
           </div>
-          <div class="flex-item"> <img src="/img/ArbusD_James_Brown.jpg" alt=""></div>
+          <div class="flex-item flex-item-50"> <img src="/img/ArbusD_James_Brown.jpg" alt=""></div>
         </div>
       </div>
     </section>
     <!-- // END IMAGE HERO -->
 
-    <section>
-      <div class="wrapper">
-        <div class="flex">
-          
-          <!-- DETAILS LIST -->
-          <!-- <div class="flex-item flex-item-50 flex-gutter-large">
-            <h2 class="heading">Details</h2>
-            <div>
-              <div>Inventory No.</div>
-              <div>NM12.127</div>
-            </div>
-            <ul class="list">
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Artist</span>Diane Arbus</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Title</span>James Brown Backstage at the Apollo Theater, N.Y.C.</li> 
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Date</span>1966; printed later</li> 
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Edition</span>21/75</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Medium</span>Gelatin silver print</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Dimensions</span>20 x 16 inches</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Signature</span>Stamped “A Diane Arbus photograph,” signed, titled, dated, numbered</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Frame Support</span>25x24x2inches</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">MediaType</span>B/WPhotograph</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Description</span>James Brown in suit (printed later by Neil Selkirk)</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Provenance</span>Robert Miller Gallery, NY</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Exhibitions</span></li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">References</span>Illus: Magazine Work, p. 74; Revelations, p. 178</li>
-            </ul> 
-          </div> -->
-        
-          <!-- INVOICE INFO -->
-          <!-- <div class="flex-item flex-item-50 flex-gutter-large">
-            <h2 class="heading">Invoice Infomation</h2>
-            <ul class="list">
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Invoice No.</span>12723P</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Seller</span>Robert Miller Gallery Invoice No.12723P</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Purchase Price</span>$6,375</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Retail Price</span>$7,500</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Insured Value</span>$7,500</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Date</span>1 November 2012</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Value Date</span>29 November 2012</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Tax Paid</span>0</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Tax Rate</span>0</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">State</span>New York</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Provenance</span>Robert Miller Gallery, NY</li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Exhibitions</span></li>
-              <li class="list-item flex"><span class="list-heading flex-item flex-item-25">References</span>Illus: Magazine Work, p. 74; Revelations, p. 178</li>
-            </ul>
-          </div> -->
-        </div>
-      </div>
-    </section>
+    <!-- <ul class="list">
+      <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Invoice No.</span>12723P</li>
+      <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Seller</span>Robert Miller Gallery Invoice No.12723P</li>
+      <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Purchase Price</span>$6,375</li>
+      <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Retail Price</span>$7,500</li>
+      <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Insured Value</span>$7,500</li>
+      <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Date</span>1 November 2012</li>
+      <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Value Date</span>29 November 2012</li>
+      <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Tax Paid</span>0</li>
+      <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Tax Rate</span>0</li>
+      <li class="list-item flex"><span class="list-heading flex-item flex-item-25">State</span>New York</li>
+      <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Provenance</span>Robert Miller Gallery, NY</li>
+      <li class="list-item flex"><span class="list-heading flex-item flex-item-25">Exhibitions</span></li>
+      <li class="list-item flex"><span class="list-heading flex-item flex-item-25">References</span>Illus: Magazine Work, p. 74; Revelations, p. 178</li>
+    </ul> -->
+
+    <script>
+    (function() {
+      // var el  = document.querySelectorAll('.trigger');
+      // var list  = document.querySelector('.details-list');
+
+      // [].forEach.call(el, function (el) {
+      //   el.addEventListener('click', function () {
+      //     list.classList.toggle('show')
+      //   }, false)
+      // })   
+    })();
+    </script>
   </body>
 </html>

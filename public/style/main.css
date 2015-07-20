@@ -641,6 +641,15 @@ body {
   padding: 0 10px 0 0;
   margin-bottom: 0; }
 
+.details-list.list, .details-list.list-inline {
+  padding-top: 1rem;
+  transition: all 0.2s ease; }
+  .details-list.list.show, .details-list.show.list-inline {
+    opacity: 1;
+    max-height: 100%; }
+  .details-list.list .list-item, .details-list.list-inline .list-item {
+    margin-bottom: 0; }
+
 .list-heading {
   font-family: "latosemibold"; }
   .list-heading:after {
@@ -671,22 +680,24 @@ body {
     display: block;
     width: 100%;
     margin: 0 auto; }
-  .image-hero .image-heading {
+  .image-hero .heading {
     font-size: 3rem;
     line-height: 5.1rem;
     letter-spacing: 0.0027rem; }
-  .image-hero .image-artist {
+  .image-hero .heading-sub {
     padding-top: 3rem;
     font-family: "latolight";
     font-size: 2.5rem;
     line-height: 4.25rem;
     letter-spacing: 0.00225rem; }
-  .image-hero .image-date {
+  .image-hero .heading-em {
     font-family: "latolight_italic";
     font-size: 2rem;
     line-height: 3.4rem;
     letter-spacing: 0.0018rem; }
-  .image-hero .image-list.list, .image-hero .image-list.list-inline {
-    padding-top: 1rem; }
-    .image-hero .image-list.list .list-item, .image-hero .image-list.list-inline .list-item {
-      margin-bottom: 0; }
+  .image-hero .heading-sub-lrg {
+    color: #999999;
+    font-family: "latolight";
+    font-size: 2.2rem;
+    line-height: 3.74rem;
+    letter-spacing: 0.00198rem; }
