@@ -1,11 +1,26 @@
 // colors
 $site-color: #000000;
 $site-background: #ffffff;
+$site-hover: #989c9f;
+$site-highlight: #f7155b;
+$site-gray: #cbcbcb;
+$site-dark-gray:#646b6b;
+
+
+// $site-stroke: #dbdbdb;
+// $site-light-gray: #f8f8f9;
+// $site-strong: #1b1c21;
+// $site-light: #AAAAAA;
+// $site-medium: #5c5c5c;
+// $site-error: #f07479;
+// $site-background: rgba(27, 28, 33, 0.96);
+// $site-background-alt: #f9f9f9;
+
 
 
 // sidebar
-$sidebar-color: darken(#cfcfc7, 20%);
-$nav-color: lighten($sidebar-color, 10%);
+// $sidebar-color: darken(#cfcfc7, 20%);
+// $nav-color: lighten($sidebar-color, 10%);
 
 //font families
 $base-font: 'latoregular';

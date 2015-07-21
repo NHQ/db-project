@@ -701,3 +701,17 @@ body {
     font-size: 2.2rem;
     line-height: 3.74rem;
     letter-spacing: 0.00198rem; }
+
+.nav .nav-item {
+  display: block;
+  width: 25%; }
+
+.nav .nav-link {
+  text-decoration: none;
+  color: #262929;
+  font-size: 2rem;
+  line-height: 3.4rem;
+  letter-spacing: 0.0018rem;
+  transition: all 0.2s ease; }
+  .nav .nav-link:hover {
+    color: #989c9f; }
