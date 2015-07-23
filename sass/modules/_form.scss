@@ -1,9 +1,15 @@
 .form {
   width: 100%;
   padding: 2rem 0 0;
-}
-input {
-  border-width: 2px;
-  display: block;
-  margin-bottom: 20px;
+
+  input {
+    border-width: 2px;
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  select { 
+    display: block;
+    margin-bottom: 2rem;
+  }
 }

@@ -719,8 +719,10 @@ body {
 .form {
   width: 100%;
   padding: 2rem 0 0; }
-
-input {
-  border-width: 2px;
-  display: block;
-  margin-bottom: 20px; }
+  .form input {
+    border-width: 2px;
+    display: block;
+    margin-bottom: 20px; }
+  .form select {
+    display: block;
+    margin-bottom: 2rem; }

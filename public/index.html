@@ -14,22 +14,32 @@
 			<input type="file" name="workImage" accept="image/*" placeholder="Choose File">
 
 			<!-- ARTIST INFO -->
-			<input type="text" name="artist" placeholder="Artist">
+			<select name="artistName" id="">
+				<option value="" disabled selected >Artist Name</option>
+			</select>
 			<input type="text" name="artistDates" placeholder="Artist Dates">
-			<input type="text" name="artistOrigin" placeholder="Artist Origin">
+			<select name="artistOrigin" id="">
+				<option value="" disabled selected >Artist Origin</option>
+			</select>
 
 			<!-- WORK INFO -->
 			<input type="text" name="workTitle" placeholder="Work Title">
 			<input type="date" name="workYear" placeholder="Year of Work">
-			<input type="text" name="workOrigin" placeholder="Origin of Work">
+			<select name="workOrigin" id="">
+				<option value="" disabled selected >Origin of Work</option>
+			</select>
 			<input type="text" name="workSignature" placeholder="Signature">
 
 			<!-- WORK Details -->
 			<input type="text" name="detailEdition" placeholder="Edition">
 			<input type="text" name="detailDimensions" placeholder="Dimensions">
 			<input type="text" name="detailFrameSupport" placeholder="Frame Support">
-			<input type="text" name="detailFrameSupport" placeholder="Medium">
-			<input type="text" name="detailFrameSupport" placeholder="Media Type">
+			<select name="detailMedium" id="">
+				<option value="" disabled selected >Medium</option>
+			</select>
+			<select name="detailMediaType" id="">
+				<option value="" disabled selected >Media Type</option>
+			</select>
 			<input type="text" name="detailProvenance" placeholder="Provenance">
 			<input type="text" name="detailExhibitions" placeholder="Exhibitions">
 			<input type="text" name="detailReferences" placeholder="References">
@@ -46,7 +56,9 @@
 			<input type="text" name="taxValue" placeholder="Value Date">
 			<input type="text" name="taxPaid" placeholder="Tax Paid">
 			<input type="text" name="taxRate" placeholder="Tax Rate">
-			<input type="text" name="taxState" placeholder="State of Purchace">
+			<select name="taxState" id="">
+				<option value="" disabled selected >State of Purchace</option>
+			</select>
 
 			<!-- SUBMIT -->
 			<input type="submit" value="Submit">
