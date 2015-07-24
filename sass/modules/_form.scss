@@ -3,13 +3,17 @@
   padding: 2rem 0 0;
 
   input {
-    border-width: 2px;
+    width: 100%;
     display: block;
+
     margin-bottom: 20px;
+    border-width: 2px;
   }
   
   select { 
+    width: 100%;
     display: block;
+    
     margin-bottom: 2rem;
   }
 }

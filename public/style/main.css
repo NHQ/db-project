@@ -720,9 +720,11 @@ body {
   width: 100%;
   padding: 2rem 0 0; }
   .form input {
-    border-width: 2px;
+    width: 100%;
     display: block;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    border-width: 2px; }
   .form select {
+    width: 100%;
     display: block;
     margin-bottom: 2rem; }
