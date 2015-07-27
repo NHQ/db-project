@@ -1,5 +1,20 @@
 .nav {
+  height: 5%;
 
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  overflow: hidden;
+  z-index: 1;
+  backface-visibility: hidden;
+
+  transition: all .5s ease;
+  transform: translate3d(0,100%,0);
+
+  &.show { transform: translate3d(0,0,0);}
+
+  
   .nav-item { 
     display: block;
     width: 25%;    

@@ -17,6 +17,9 @@ $media-style: max-width;
 @mixin phone-l() {
   @include respond-to($phone-l, $media-style) { @content; }
 }
+@mixin phone-s() {
+  @include respond-to($phone-s, $media-style) { @content; }
+}
 @mixin tablet() {
   @include respond-to($tablet, $media-style) { @content; }
 }
