@@ -5,7 +5,7 @@
     <title>Details Page</title>
     <link rel="stylesheet" href="../style/main.css">
   </head>
-  <body data-iventory="NM12_127">
+  <body>
 
   <!-- BEGIN HERO -->
     <section class="hero">
@@ -130,44 +130,17 @@
     <div id="menu-button">
       <a href="#menu" id="menu-toggle"><span></span></a>
     </div>
-    <div class="wrapper wrapper-50 nav">
-      <nav class="flex flex-justify-center">
-        <span class="flex-item flex-gutter nav-item"><a href="javascript:void(0)" class="nav-link nav-info">Info</a></span>
-        <span class="flex-item flex-gutter nav-item"><a href="javascript:void(0)" class="nav-link nav-details">Details</a></span>
-        <span class="flex-item flex-gutter nav-item"><a href="javascript:void(0)" class="nav-link nav-invoice">Invoce</a></span>
+    <div class="wrapper nav-wrapper">
+      <nav class="flex flex-justify-center nav">
+        <span class="flex-item flex-gutter nav-item"><a href="javascript:void(0)" class="nav-link data-link">Info</a></span>
+        <span class="flex-item flex-gutter nav-item"><a href="javascript:void(0)" class="nav-link data-link">Details</a></span>
+        <span class="flex-item flex-gutter nav-item"><a href="javascript:void(0)" class="nav-link data-link">Invoce</a></span>
         <span class="flex-item flex-gutter nav-item"><a href="javascript:void(0)" class="nav-link">Edit</a></span>
       </nav>
     </div>
     <!-- //END MAIN NAV -->
 
-    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script>
-      $(document).ready(function () {
-
-        $('.nav-info', '.nav').on('click', function () {
-          $('.info-list', '.data-list-wrap').toggleClass('show')
-        })
-
-        $('.nav-details', '.nav').on('click', function () {
-          $('.details-list', '.data-list-wrap').toggleClass('show')
-        })
-
-         $('.nav-invoice', '.nav').on('click', function () {
-          $('.invoice-list', '.data-list-wrap').toggleClass('show')
-        })
-
-        $('#menu-toggle').on('click', function () {
-          $(this).toggleClass('on')
-          $('.nav').toggleClass('show')
-        })
-      })
-    </script>
     
-    <script>
-    // (function() { 
-
-     
-    // })();
-    </script>
+    <script src="../scripts/bundle.js" type="text/javascript"></script>
   </body>
 </html>

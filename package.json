@@ -24,6 +24,7 @@
     "formidable": "^1.0.17",
     "level": "^0.18.0",
     "postcss": "^4.1.16",
-    "postcss-cli": "^1.4.0"
+    "postcss-cli": "^1.4.0",
+    "router": "^1.1.2"
   }
 }
