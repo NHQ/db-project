@@ -35,14 +35,6 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
-#container {
-    min-height: 100%;
-    position: relative;
-}
-#content {
-     padding-top:78px;
-}
-
 @include tablet-l() {
     html { font-size: 9.5px; }
 }

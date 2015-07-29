@@ -20,11 +20,11 @@
 
   &.show { transform: translate3d(0,0,0);}
 
-  @include desktop() {
-    height: 7rem;
-
-    padding-left: 10%;
-    padding-top: 2rem;
+  @include tablet-m() {
+    padding-top: .8rem;
+  }
+  @include phone-l() {
+    padding-left: 15%;
   }
 }
 .nav {

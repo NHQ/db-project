@@ -6,6 +6,8 @@
   margin-left: auto;
 }
 
+.wrapper-rel { position: relative;}
+
 @for $i from 1 through 10 {
   .wrapper-#{$i * 10} { 
     margin-left: auto;

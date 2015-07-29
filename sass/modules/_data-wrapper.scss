@@ -1,20 +1,7 @@
+.data-section { padding: 2rem 0 12rem; }
 .data-wrapper {
-  padding: 2rem 0 12rem;
 
   img { display: block; width: 100%; margin: 0 auto;}
-
-  .heading { @include type-size(3) }
-  .heading-sub { 
-    padding-top: 3rem;
-    font-family: $light; 
-    @include type-size(2.5)
-  }
-  .heading-em { font-family: $light-italic; @include type-size(2) }
-  .heading-sub-lrg {
-    color: lighten($site-color, 60%);
-    font-family: $light;
-    @include type-size(2.2);
-  }
 
   .data-list-wrap {
     & > .list { 
@@ -28,5 +15,25 @@
       .list-item { margin-bottom: 0; }
     }
     @include tablet-m() { order: 2; width: 100%; }
+  }
+
+  & > .flex {
+    @include tablet-m() {
+      flex-flow: column nowrap;
+      & > .flex-item-50 { width: 100%; margin: 0;}
+    }
+  }
+
+  .heading { @include type-size(3) }
+  .heading-sub { 
+    padding-top: 3rem;
+    font-family: $light; 
+    @include type-size(2.5)
+  }
+  .heading-em { font-family: $light-italic; @include type-size(2) }
+  .heading-sub-lrg {
+    color: lighten($site-color, 60%);
+    font-family: $light;
+    @include type-size(2.2);
   }
 }

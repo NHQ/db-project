@@ -2,7 +2,7 @@ var fs		= require('fs')
 // var template = fs.readFileSync('public/templates/details.html', 'utf8')
 
 
-
+// event listeners
 var navInfo     = document.querySelector('.nav').querySelectorAll('.data-link');
 var dataList    = document.querySelector('.data-list-wrap').querySelectorAll('.list');
 var menuToggle  = document.querySelector('#menu-toggle');
