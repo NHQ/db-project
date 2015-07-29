@@ -15,24 +15,29 @@
   z-index: 1;
   backface-visibility: hidden;
 
-  transition: all .5s ease;
+  transition: transform .5s ease;
   transform: translate3d(0,100%,0);
 
   &.show { transform: translate3d(0,0,0);}
 
-  @include tablet-m() {
-    padding-top: .8rem;
-  }
-  @include phone-l() {
-    padding-left: 15%;
-  }
+  @include tablet-m() { padding-top: .8rem; }
+  @include phone-l() { padding-left: 20px;  height: 50%; }
 }
 .nav {
   max-width: 640px;
 
   .nav-item { 
     display: block;
-    width: 25%;    
+    width: 25%;  
+
+     @include phone-l() {
+      width: 100%; 
+      border-bottom: 1px solid $site-dark-gray;
+      padding-bottom: 2rem;
+      padding-top: 2rem;
+
+      &:last-child {border-bottom: 0; padding-bottom: 0}
+    } 
   }
 
   .nav-link {
@@ -40,9 +45,21 @@
     color: lighten($site-hover, 30%);
 
     @include type-size(2);
-    transition: all .2s ease;
+    transition: color .2s ease;
     
     &:hover{ color: darken($site-dark-gray, 25%);}
+
+    @include phone-l() {
+      display: block;
+      text-align: center;
+
+      font-size: 3rem;
+      line-height: normal;
+    }
+
   }
   @include desktop() { max-width: 100%; }
+  @include phone-l() {
+    &.flex { flex-flow: column nowrap;}
+  } 
 }
