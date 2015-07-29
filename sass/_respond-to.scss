@@ -23,6 +23,9 @@ $media-style: max-width;
 @mixin tablet() {
   @include respond-to($tablet, $media-style) { @content; }
 }
+@mixin tablet-m() {
+  @include respond-to($tablet-m, $media-style) { @content; }
+}
 @mixin tablet-l() {
   @include respond-to($tablet-l, $media-style) { @content; }
 }

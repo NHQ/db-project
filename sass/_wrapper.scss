@@ -20,6 +20,6 @@
   }
 }
 
-@include tablet() {
+@include desktop() {
 	.wrapper { padding: 0 $spacing-double;}
 }

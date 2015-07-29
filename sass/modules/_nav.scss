@@ -1,9 +1,10 @@
 .nav-wrapper {
   max-width: 100%;
   width: 100%;
+  height: 7rem;
 
-  height: 10%;
-  padding-left: 5%;
+  padding-left: 10%;
+  padding-top: 2rem;
   background-color: darken(white, 40%);
 
   position: fixed;
@@ -18,6 +19,13 @@
   transform: translate3d(0,100%,0);
 
   &.show { transform: translate3d(0,0,0);}
+
+  @include desktop() {
+    height: 7rem;
+
+    padding-left: 10%;
+    padding-top: 2rem;
+  }
 }
 .nav {
   max-width: 640px;
@@ -36,4 +44,5 @@
     
     &:hover{ color: darken($site-dark-gray, 25%);}
   }
+  @include desktop() { max-width: 100%; }
 }

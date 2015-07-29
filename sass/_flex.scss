@@ -11,6 +11,10 @@
       margin:0 auto;
     }
   }
+
+  @for $i from 1 through 12 {
+    .flex-order-#{$i} { order: $i;}
+  }
 }
 
 // one column stack
@@ -56,7 +60,6 @@
 @include tablet() {
   .flex {
     flex-flow: column nowrap; 
-
     .flex-item { width: 100%;}
   }
   .flex-gutter {

@@ -6,22 +6,6 @@ $site-highlight: #f7155b;
 $site-gray: #cbcbcb;
 $site-dark-gray:#646b6b;
 
-
-// $site-stroke: #dbdbdb;
-// $site-light-gray: #f8f8f9;
-// $site-strong: #1b1c21;
-// $site-light: #AAAAAA;
-// $site-medium: #5c5c5c;
-// $site-error: #f07479;
-// $site-background: rgba(27, 28, 33, 0.96);
-// $site-background-alt: #f9f9f9;
-
-
-
-// sidebar
-// $sidebar-color: darken(#cfcfc7, 20%);
-// $nav-color: lighten($sidebar-color, 10%);
-
 //font families
 $base-font: 'latoregular';
 $itallic: 'latoitalic';
@@ -66,6 +50,7 @@ $spacing-fourth: $spacing / 4;
 	$phone: 640;
 	$phone-l: 768;
 	$tablet: 960;
+	$tablet-m: 800;
 	$tablet-l: 1024;
 	$full: 1080; 
 	$full-l: 1120; 

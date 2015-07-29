@@ -1,4 +1,4 @@
-var fs		=require('fs')
+var fs		= require('fs')
 // var template = fs.readFileSync('public/templates/details.html', 'utf8')
 
 
