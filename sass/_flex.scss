@@ -58,10 +58,6 @@
 }
 
 @include tablet-m() {
-  // .flex {
-  //   flex-flow: column nowrap; 
-  //   .flex-item { width: 100%;}
-  // }
   .flex-gutter {
     margin: 0.5rem 0 0.5rem 0;
     padding: 0;
