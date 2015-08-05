@@ -9,6 +9,7 @@ var utils 			= require('util')
 var router 			= require('router')()	
 var db 					= sublevel(level('./db'))
 var artistdb 		= db.sublevel('artist')
+var sellerdb 		= db.sublevel('seller')
 var server 			= http.createServer(handler)
 
 var static		= ecstatic({root: __dirname + '/public'})
@@ -29,8 +30,9 @@ router.post('/post', function (req, res) {
 				res.end()
 			}
 			else {
-				res.writeHead(302, {'Location': '/templates/details.html'})
+				res.writeHead(302, {'Location': '/'})
 				res.end()
+
 				// check for artist
 				artistdb.get(fields.artist, function (err, index) {
 					if (err) {
@@ -46,6 +48,26 @@ router.post('/post', function (req, res) {
 						index = JSON.parse(index)
 						index.push(entry)
 						artistdb.put(fields.artist, JSON.stringify(index), function (err) {
+							if (err) console.log(err)
+						})
+					}
+				})
+
+				// check for seller
+				sellerdb.get(fields.seller, function (err, index) {
+					if (err) {
+						console.log('New Seller')
+
+						var entry = [{id: key, title: fields.workTitle, artist: fields.artist}]
+						sellerdb.put(fields.invoiceSeller, JSON.stringify(entry), function (err) {
+							if (err) console.log(err)
+						})
+					}
+					else {
+						var entry = {id: key, title: fields.workTitle, artist: fields.artist}
+						index = JSON.parse(index)
+						index.push(entry)
+						sellerdb.put(fields.invoiceSeller, JSON.stringify(index), function (err) {
 							if (err) console.log(err)
 						})
 					}
@@ -74,6 +96,17 @@ router.get('/artist/:id', function (req, res) {
 	var artist = req.params.id
 
 	artistdb.get(artist, function (err, index) {
+		if (err) return console.log(err)
+		console.log(utils.inspect(JSON.parse(index)))
+		res.end(index)
+	})
+})
+
+router.get('/seller/:id', function (req, res) {
+	res.writeHead(200, {'content-type': 'application/JSON'})
+	var seller = req.params.id
+
+	sellerdb.get(seller, function (err, index) {
 		if (err) return console.log(err)
 		console.log(utils.inspect(JSON.parse(index)))
 		res.end(index)
