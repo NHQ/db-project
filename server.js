@@ -8,6 +8,7 @@ var formidable 	= require('formidable')
 var utils 			= require('util')
 var router 			= require('router')()	
 var db 					= sublevel(level('./db'))
+var inventorydb 		= db.sublevel('inventory')
 var artistdb 		= db.sublevel('artist')
 var sellerdb 		= db.sublevel('seller')
 var server 			= http.createServer(handler)
@@ -32,6 +33,26 @@ router.post('/post', function (req, res) {
 			else {
 				res.writeHead(302, {'Location': '/'})
 				res.end()
+
+				// check for inventory number
+				inventorydb.get(fields.inventoryNumber, function (err, index) {
+					if (err) {
+						console.log('New Inventory Number')
+
+						var entry = [{id: key, title: fields.workTitle, artist: fields.artist}]
+						inventorydb.put(fields.inventoryNumber, function (err) {
+							if (err) console.log(err)
+						})
+					}
+					else {
+						var entry = {id: key, title: fields.workTitle, artist: fields.artist}
+						index = JSON.parse(index)
+						index.push(entry)
+						inventorydb.put(fields.inventorydb, JSON.stringify(index), function (err) {
+							if (err) console.log(err)
+						})
+					}
+				})
 
 				// check for artist
 				artistdb.get(fields.artist, function (err, index) {
@@ -91,6 +112,7 @@ router.get('/inventory/:id', function (req, res) {
 	})
 })
 
+// get artist
 router.get('/artist/:id', function (req, res) {
 	res.writeHead(200, {'content-type': 'application/JSON'})
 	var artist = req.params.id
@@ -102,6 +124,7 @@ router.get('/artist/:id', function (req, res) {
 	})
 })
 
+// get seller
 router.get('/seller/:id', function (req, res) {
 	res.writeHead(200, {'content-type': 'application/JSON'})
 	var seller = req.params.id
