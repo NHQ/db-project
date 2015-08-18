@@ -1,9 +1,17 @@
+var route = require('wayfarer')('/')
+var fs = require('fs')
+var events = require('./lib/events.js')
 window.xhr   = require('hyperquest')
-// var fs		= require('fs')
 
-// var template = fs.readFileSync('public/templates/details.html', 'utf8')
+var template = fs.readFileSync('public/templates/details.html', 'utf8')
 
+route.on('/', function () {})
+route.on('templates/details', function () {
+  events()
+})
 
-var req  = xhr('http://localhost:11001/artist/picasso')
+route.on('artist/:name', function (params) {
+  document.body.innerHTML = templates
+})
 
-req.on('data', function (data) {console.log(data.toString())})
+route(location.pathname.split('.')[0])

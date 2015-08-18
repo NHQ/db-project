@@ -1,17 +1,17 @@
-var http 				= require('http')
-var ecstatic 		= require('ecstatic')
-var path 				= require('path')
-var fs 					= require('fs')
-var level 			= require('level')
-var sublevel 		= require('level-sublevel')
-var formidable 	= require('formidable')
-var utils 			= require('util')
-var router 			= require('router')()	
-var db 					= sublevel(level('./db'))
+var http 						= require('http')
+var ecstatic 				= require('ecstatic')
+var path 						= require('path')
+var fs 							= require('fs')
+var level 					= require('level')
+var sublevel 				= require('level-sublevel')
+var formidable 			= require('formidable')
+var utils 					= require('util')
+var router 					= require('router')()	
+var db 							= sublevel(level('./db'))
 var inventorydb 		= db.sublevel('inventory')
-var artistdb 		= db.sublevel('artist')
-var sellerdb 		= db.sublevel('seller')
-var server 			= http.createServer(handler)
+var artistdb 				= db.sublevel('artist')
+var sellerdb 				= db.sublevel('seller')
+var server 					= http.createServer(handler)
 
 var static		= ecstatic({root: __dirname + '/public'})
 
@@ -113,7 +113,7 @@ router.get('/inventory/:id', function (req, res) {
 })
 
 // get artist
-router.get('/artist/:id', function (req, res) {
+router.get('/api/artist/:id', function (req, res) {
 	res.writeHead(200, {'content-type': 'application/JSON'})
 	var artist = req.params.id
 
