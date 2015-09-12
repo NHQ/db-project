@@ -14,13 +14,16 @@
     "watch": "npm run watch:js & npm run watch:css",
     "build": "npm run prefix",
     "develop": "parallelshell 'npm run start' 'npm run watch'",
-    "dev-start": "nodemon server.js"
+    "dev-start": "nodemon server.js",
+    "db-post": "./post.sh"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^5.2.0",
     "brfs": "^1.4.0",
+    "catch-links": "^2.0.0",
+    "concat-stream": "^1.5.0",
     "ecstatic": "^0.7.4",
     "formidable": "^1.0.17",
     "level": "^0.18.0",

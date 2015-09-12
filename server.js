@@ -25,87 +25,68 @@ router.post('/post', function (req, res) {
 		// set key
 		var key = fields.inventoryNumber
 		
-		db.put(key, JSON.stringify(fields), function (err) {
+		res.writeHead(302, {'Location': '/'})
+		res.end()
+
+		// check for inventory number
+		inventorydb.get(fields.inventoryNumber, function (err, index) {
+			// not in db
 			if (err) {
-				console.log(err)
-				res.end()
+				console.log('New Inventory Number')
+
+				inventorydb.put(fields.inventoryNumber, JSON.stringify(fields), function (err) {
+					if (err) console.log(err)
+				})
+			}
+			// already in db
+			else {
+				inventorydb.put(fields.inventoryNumber, JSON.stringify(fields), function (err) {
+					if (err) console.log(err)
+				})
+			}
+		})
+
+		// check for artist
+		artistdb.get(fields.artist, function (err, index) {
+			if (err) {
+				console.log('New artist')
+
+				artistdb.put(fields.artist, JSON.stringify(fields), function (err) {
+					if (err) console.log(err)
+				})
 			}
 			else {
-				res.writeHead(302, {'Location': '/'})
-				res.end()
-
-				// check for inventory number
-				inventorydb.get(fields.inventoryNumber, function (err, index) {
-					if (err) {
-						console.log('New Inventory Number')
-
-						var entry = [{id: key, title: fields.workTitle, artist: fields.artist}]
-						inventorydb.put(fields.inventoryNumber, function (err) {
-							if (err) console.log(err)
-						})
-					}
-					else {
-						var entry = {id: key, title: fields.workTitle, artist: fields.artist}
-						index = JSON.parse(index)
-						index.push(entry)
-						inventorydb.put(fields.inventorydb, JSON.stringify(index), function (err) {
-							if (err) console.log(err)
-						})
-					}
-				})
-
-				// check for artist
-				artistdb.get(fields.artist, function (err, index) {
-					if (err) {
-						console.log('New artist')
-
-						var entry = [{id: key, title: fields.workTitle}]
-						artistdb.put(fields.artist, JSON.stringify(entry), function (err) {
-							if (err) console.log(err)
-						})
-					}
-					else {
-						var entry = {id: key, title: fields.workTitle}
-						index = JSON.parse(index)
-						index.push(entry)
-						artistdb.put(fields.artist, JSON.stringify(index), function (err) {
-							if (err) console.log(err)
-						})
-					}
-				})
-
-				// check for seller
-				sellerdb.get(fields.seller, function (err, index) {
-					if (err) {
-						console.log('New Seller')
-
-						var entry = [{id: key, title: fields.workTitle, artist: fields.artist}]
-						sellerdb.put(fields.invoiceSeller, JSON.stringify(entry), function (err) {
-							if (err) console.log(err)
-						})
-					}
-					else {
-						var entry = {id: key, title: fields.workTitle, artist: fields.artist}
-						index = JSON.parse(index)
-						index.push(entry)
-						sellerdb.put(fields.invoiceSeller, JSON.stringify(index), function (err) {
-							if (err) console.log(err)
-						})
-					}
+				artistdb.put(fields.artist, JSON.stringify(fields), function (err) {
+					if (err) console.log(err)
 				})
 			}
-			// read the database and log response
-			res.end()
 		})
+
+		// check for seller
+		sellerdb.get(fields.seller, function (err, index) {
+			if (err) {
+				console.log('New Seller')
+
+				sellerdb.put(fields.invoiceSeller, JSON.stringify(fields), function (err) {
+					if (err) console.log(err)
+				})
+			}
+			else {
+				sellerdb.put(fields.invoiceSeller, JSON.stringify(fields), function (err) {
+					if (err) console.log(err)
+				})
+			}
+		})		
 	})
 })
 
 // get ID's
-router.get('/inventory/:id', function (req, res) {
+router.get('/api/inventory/:id', function (req, res) {
 	res.writeHead(200, {'content-type': 'application/JSON'})
 	var key 	= req.params.id
+console.log(key)
 	
-	db.get(key, function (err, value) {
+	inventorydb.get(key, function (err, value) {
     if (err) return console.log(err) 
     console.log(utils.inspect(JSON.parse(value)))
 		res.end(value)
