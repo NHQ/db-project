@@ -15,7 +15,7 @@
     "build": "npm run prefix",
     "develop": "parallelshell 'npm run start' 'npm run watch'",
     "dev-start": "nodemon server.js",
-    "db-post": "./post.sh"
+    "db-post": "./test-post.sh"
   },
   "author": "",
   "license": "ISC",
