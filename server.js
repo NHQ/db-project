@@ -7,7 +7,7 @@ var sublevel 				= require('level-sublevel')
 var formidable 			= require('formidable')
 var utils 					= require('util')
 var router 					= require('router')()	
-var db 							= sublevel(level('./db'))
+var db 							= sublevel(level('./db', {valueEncoding: 'json'}))
 var inventorydb 		= db.sublevel('inventory')
 var artistdb 				= db.sublevel('artist')
 var sellerdb 				= db.sublevel('seller')
@@ -34,7 +34,7 @@ router.post('/post', function (req, res) {
 			if (err) {
 				console.log('New Inventory Number')
 
-				inventorydb.put(fields.inventoryNumber, JSON.stringify(fields), function (err) {
+				inventorydb.put('inv!' + fields.inventoryNumber, JSON.stringify(fields), function (err) {
 					if (err) console.log(err)
 				})
 			}
@@ -84,13 +84,36 @@ router.post('/post', function (req, res) {
 router.get('/api/inventory/:id', function (req, res) {
 	res.writeHead(200, {'content-type': 'application/JSON'})
 	var key 	= req.params.id
-console.log(key)
-	
-	inventorydb.get(key, function (err, value) {
-    if (err) return console.log(err) 
-    console.log(utils.inspect(JSON.parse(value)))
-		res.end(value)
-	})
+
+	if(key === 'all'){
+		var options = {
+			gt:'inv!',
+			lt:'inv!~'
+		}
+		var st = inventorydb.createReadStream(options, function (err) {
+    	if (err) return console.log(err) 
+		})
+
+		st.on('error', function(err){
+			res.write(JSON.stringify(err))
+		})
+		st.on('data', function(data){
+			var write = JSON.stringify(data)
+			res.write(write + '\n')
+		})
+		st.on('close', function(){
+			res.end()
+		})
+	}
+
+	else{
+		inventorydb.get('inv!' + key, function (err, value) {
+  	  if (err) return console.log(err) 
+    	console.log(utils.inspect(JSON.parse(value)))
+			res.end(value)
+		})
+	}
+		
 })
 
 // get artist
